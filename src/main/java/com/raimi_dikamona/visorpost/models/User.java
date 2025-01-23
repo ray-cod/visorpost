@@ -1,6 +1,7 @@
 package com.raimi_dikamona.visorpost.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
@@ -39,11 +40,13 @@ public class User implements UserDetails {
     @Column(name = "profile_picture")
     private String profilePicture; // URL
 
+    @Email
     @NotBlank(message = "Email is required")
     @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
+    @Size(min = 8, message = "Password should be at least 8 characters long")
     private String password;
 
     @Enumerated(EnumType.STRING)
