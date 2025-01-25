@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,8 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    private static final String SECRET_KEY = "5E3B2C7D1F7A9D50A3C5D4B1E7A8F1C9B2E0A1C4D6B0E5A3F2A4B3C8E7D5A1F2";
+    @Value("${app.auth.key}")
+    private static String SECRET_KEY ;
     private static final int TOKEN_VALIDITY = 1000 * 60 * 30; // // Token validity in milliseconds (30 minutes)
 
     /**
