@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="login">
+            <h3>Welcome to VisorPost.</h3>
+            <p>Where creativity is at its pinnacle.</p>
+            <div class="page-links">
+                <a href="/login" class="active">Login</a><a href="/register">Register</a>
+            </div>
+            <form th:action="@{api/auth/authenticate}" method="post">
+                <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">Login</button> <a href="/forget-password">Forget password?</a>
+                </div>
+            </form>
+            <div class="other-links">
+                <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+            </div>
+        </div>
+        <div th:fragment="register">
+            <h3>Welcome to VisorPost.</h3>
+            <p>Where creativity is at its pinnacle.</p>
+            <div class="page-links">
+                <a href="/login">Login</a><a href="/register" class="active">Register</a>
+            </div>
+            <form th:action="@{api/auth/register}" method="post">
+                <input class="form-control" type="text" name="firstName" placeholder="FirtName" required>
+                <input class="form-control" type="text" name="lastName" placeholder="LastName" required>
+                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                <input class="form-control" type="password" name="password" placeholder="Password" required>
+                <div class="form-button">
+                    <button id="submit" type="submit" class="ibtn">Register</button>
+                </div>
+            </form>
+            <div class="other-links">
+                <span>Or register with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+            </div>
+        </div>
+        <div th:fragment="forgot-password">
+            <div class="form-items">
+                <h3>Password Reset</h3>
+                <p>To reset your password, enter the email address you use to sign in to VisorPost</p>
+                <form>
+                    <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
+                    <div class="form-button full-width">
+                        <button id="submit" type="submit" class="ibtn btn-forget">Send Reset Link</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-sent">
+                <div class="tick-holder">
+                    <div class="tick-icon"></div>
+                </div>
+                <h3>Password link sent</h3>
+                <p>Please check your inbox iofrm@iofrmtemplate.io</p>
+                <div class="info-holder">
+                    <span>Unsure if that email address was correct?</span> <a href="#">We can help</a>.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

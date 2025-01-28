@@ -19,7 +19,7 @@ import java.util.function.Function;
 public class JwtService {
 
     @Value("${app.auth.key}")
-    private static String SECRET_KEY ;
+    private String SECRET_KEY ;
     private static final int TOKEN_VALIDITY = 1000 * 60 * 30; // // Token validity in milliseconds (30 minutes)
 
     /**
@@ -124,6 +124,9 @@ public class JwtService {
      * @return the SecretKey used for signing and verifying tokens
      */
     private SecretKey getSignInKey() {
+        if (SECRET_KEY == null || SECRET_KEY.isEmpty()) {
+            throw new IllegalArgumentException("Secret key is missing or empty");
+        }
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }

@@ -17,11 +17,11 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "_user")
+@Table(name = "user")
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
 
     @Column(nullable = false)
@@ -55,7 +55,7 @@ public class User implements UserDetails {
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(unique = true)
+    @Column(name = "google_id")
     private String googleId;
 
     @Override

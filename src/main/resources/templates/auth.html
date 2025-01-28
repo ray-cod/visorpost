@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${fragmentName}"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/fontawesome-all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/auth-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/auth-theme.css}">
+</head>
+<body>
+<div class="form-body">
+    <div class="website-logo">
+        <a th:href="@{/}">
+            <h3 class="logo">
+                VisorPost
+            </h3>
+        </a>
+    </div>
+    <div class="iofrm-layout">
+        <div class="img-holder">
+            <div class="bg"></div>
+            <div class="info-holder">
+                <img src="/images/graphic9.svg" alt="login_image">
+            </div>
+        </div>
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <div th:replace="~{auth_fragments :: ${fragmentName}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/javascript/jquery.min.js}"></script>
+<script th:src="@{/javascript/popper.min.js}"></script>
+<script th:src="@{/javascript/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/javascript/main.js}"></script>
+</body>
+</html>

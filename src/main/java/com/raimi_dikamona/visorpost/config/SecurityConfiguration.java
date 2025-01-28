@@ -17,13 +17,16 @@ public class SecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
+    private static final String[] WHITE_LIST_URL = {"/api/auth/**",
+            "/auth/**", "/css/**", "/javascript/**", "/images/**", "/", "/login", "/register",
+            "/forgot-password", "/static/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable) // Disable CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll() // Allow certain endpoints
+                        .requestMatchers(WHITE_LIST_URL).permitAll() // Allow certain endpoints
                         .anyRequest().authenticated() // All other endpoints require authentication
                 )
                 .sessionManagement(session -> session
