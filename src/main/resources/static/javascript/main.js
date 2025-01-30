@@ -2,7 +2,6 @@
 
 $(window).on("load", function() {
     $('.btn-forget').on('click',function(e){
-        e.preventDefault();
         var inputField = $(this).closest('form').find('input');
         if(inputField.attr('required') && inputField.val()){
             $('.error-message').remove();

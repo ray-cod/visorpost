@@ -26,16 +26,26 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain)
             throws ServletException, IOException {
-        final String authHeader = request.getHeader("Authorization");
+        String fullToken = null;
         final String jwt;
         final String userEmail;
 
-        if(authHeader == null || !authHeader.startsWith("Bearer ")){
+        // Extract the token from the "token" cookie
+        if (request.getCookies() != null) {
+            for (Cookie cookie : request.getCookies()) {
+                if ("authenticate".equals(cookie.getName())) {
+                    fullToken = cookie.getValue();
+                    break;
+                }
+            }
+        }
+
+        if(fullToken == null || !fullToken.startsWith("Bearer-")){
             filterChain.doFilter(request, response);
             return;
         }
-
-        jwt = authHeader.substring(7);
+        System.out.println("full token is: " + fullToken);
+        jwt = fullToken.substring(7);
         userEmail = jwtService.extractUsername(jwt);
 
         if(userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null){

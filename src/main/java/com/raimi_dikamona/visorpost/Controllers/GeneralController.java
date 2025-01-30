@@ -17,20 +17,22 @@ public class GeneralController {
 
     private final UserService userService;
 
-    // todo: I need to fix the method
     @GetMapping("/")
     public String homePage(Model model, Authentication authentication) {
-        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return "redirect:/login";
+        }
+
+        String email = authentication.getName(); // Ensure JWT filter properly sets this
         System.out.println("The email is: " + email);
 
         Optional<User> user = userService.getUserByEmail(email);
 
         if (user.isPresent()) {
             model.addAttribute("user", user.get());
+            return "index";
         } else {
             return "redirect:/login";
         }
-
-        return "index";
     }
 }
