@@ -3,6 +3,7 @@ package com.raimi_dikamona.visorpost.services;
 import com.raimi_dikamona.visorpost.Controllers.auth.*;
 import com.raimi_dikamona.visorpost.config.JwtService;
 import com.raimi_dikamona.visorpost.models.*;
+import com.raimi_dikamona.visorpost.models.enums.Role;
 import com.raimi_dikamona.visorpost.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.*;

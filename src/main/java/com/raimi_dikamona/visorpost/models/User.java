@@ -1,5 +1,6 @@
 package com.raimi_dikamona.visorpost.models;
 
+import com.raimi_dikamona.visorpost.models.enums.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
