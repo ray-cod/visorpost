@@ -24,15 +24,7 @@ public class AuthController {
     @PostMapping("/authenticate")
     public String authenticate(@ModelAttribute AuthenticationRequest request,
                                                HttpServletResponse response){
-        String token = "Bearer-" + service.authenticate(request).getToken();
-        System.out.println("The token is: " + token);
-        Cookie cookie = new Cookie("authenticate", token);
-        cookie.setHttpOnly(true);
-        cookie.setSecure(false); // set to true for HTTPS
-        cookie.setPath("/");
-        cookie.setMaxAge(3 * 24 * 60 * 60);
-        response.addCookie(cookie);
-
+        response.addCookie(service.generateCookie(request));
         return "redirect:/";
     }
 

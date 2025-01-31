@@ -5,6 +5,7 @@ import com.raimi_dikamona.visorpost.config.JwtService;
 import com.raimi_dikamona.visorpost.models.*;
 import com.raimi_dikamona.visorpost.models.enums.Role;
 import com.raimi_dikamona.visorpost.repositories.UserRepository;
+import jakarta.servlet.http.Cookie;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -57,5 +58,17 @@ public class AuthService {
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+    }
+
+    public Cookie generateCookie(AuthenticationRequest request) {
+        String token = "Bearer-" + this.authenticate(request).getToken();
+        System.out.println("The token is: " + token);
+        Cookie cookie = new Cookie("authenticate", token);
+        cookie.setHttpOnly(true);
+        cookie.setSecure(false); // set to true for HTTPS
+        cookie.setPath("/");
+        cookie.setMaxAge(3 * 24 * 60 * 60);
+
+        return cookie;
     }
 }
