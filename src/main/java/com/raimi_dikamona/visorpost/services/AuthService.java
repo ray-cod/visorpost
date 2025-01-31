@@ -11,7 +11,6 @@ import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 @Service
@@ -32,7 +31,6 @@ public class AuthService {
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
-                .createdAt(LocalDateTime.now())
                 .googleId("")
                 .build();
         repository.save(user);
