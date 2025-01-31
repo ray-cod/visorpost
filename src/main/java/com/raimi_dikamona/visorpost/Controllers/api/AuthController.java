@@ -1,10 +1,9 @@
-package com.raimi_dikamona.visorpost.Controllers.auth;
+package com.raimi_dikamona.visorpost.Controllers.api;
 
+import com.raimi_dikamona.visorpost.Controllers.authUtils.*;
 import com.raimi_dikamona.visorpost.services.AuthService;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

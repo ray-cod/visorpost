@@ -1,6 +1,6 @@
 package com.raimi_dikamona.visorpost.services;
 
-import com.raimi_dikamona.visorpost.Controllers.auth.*;
+import com.raimi_dikamona.visorpost.Controllers.authUtils.*;
 import com.raimi_dikamona.visorpost.config.JwtService;
 import com.raimi_dikamona.visorpost.models.*;
 import com.raimi_dikamona.visorpost.models.enums.Role;

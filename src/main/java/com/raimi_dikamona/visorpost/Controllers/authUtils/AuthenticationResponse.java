@@ -1,4 +1,4 @@
-package com.raimi_dikamona.visorpost.Controllers.auth;
+package com.raimi_dikamona.visorpost.Controllers.authUtils;
 
 import lombok.*;
 
