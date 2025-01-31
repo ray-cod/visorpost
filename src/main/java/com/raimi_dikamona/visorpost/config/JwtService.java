@@ -20,7 +20,7 @@ public class JwtService {
 
     @Value("${app.auth.key}")
     private String SECRET_KEY ;
-    private static final int TOKEN_VALIDITY = 1000 * 60 * 30; // // Token validity in milliseconds (30 minutes)
+    private static final int TOKEN_VALIDITY = 1000 * 60 * 60 * 12; // // Token validity in milliseconds (12 hours)
 
     /**
      * Extracts the username (subject) from the provided JWT token.

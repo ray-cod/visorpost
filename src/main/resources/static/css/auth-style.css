@@ -335,53 +335,6 @@ html, body {
     color: #8D8D8D;
 }
 
-.form-content .custom-file {
-    margin-bottom: 14px;
-}
-
-.form-content .custom-file-label {
-    position: absolute;
-    padding: 9px 44px 9px 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: left;
-    border: 0;
-    outline: 0;
-    border-radius: 6px;
-    background-color: #fff;
-    font-size: 15px;
-    font-weight: 300;
-    color: #8D8D8D;
-    outline: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.form-content .custom-file-label:after {
-    content: "\f382" !important;
-    font-family: Font Awesome\ 5 Free;
-    font-style: normal;
-    font-weight: 600;
-    padding: 0.475rem 0.75rem 0.375rem;
-    color: #495057;
-    background-color: transparent;
-    border-left: 0;
-    border-radius: 0;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.form-content .custom-options {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-}
-
 .form-content .form-button {
     margin-top: 0.9rem;
     margin-bottom: 1.5rem;
@@ -509,20 +462,6 @@ html, body {
 
 .form-content .other-links a i:hover, .form-content .other-links a i:focus {
     opacity: 0.8;
-}
-
-.form-content.form-sm input, .form-content.form-sm .dropdown-toggle.btn-default {
-    padding: 6px 16px;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.form-content.form-sm .form-button .ibtn {
-    padding: 4px 28px;
-}
-
-.form-content.form-sm .btn {
-    padding: 4px 28px;
 }
 
 .form-content .form-sent {
@@ -1004,19 +943,6 @@ input.sm-content {
 
 .bg-second {
     background-color: #F2F2F2;
-}
-
-.custom-borders {
-    border-top: 0;
-    border-bottom: 0;
-}
-
-.custom-borders:first-child {
-    border-top: 0;
-}
-
-.custom-borders:last-child {
-    border-bottom: 0;
 }
 
 .type-animation > * {

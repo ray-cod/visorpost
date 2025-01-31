@@ -6,11 +6,15 @@ import com.raimi_dikamona.visorpost.models.*;
 import com.raimi_dikamona.visorpost.models.enums.Role;
 import com.raimi_dikamona.visorpost.repositories.UserRepository;
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -59,14 +63,25 @@ public class AuthService {
     }
 
     public Cookie generateCookie(AuthenticationRequest request) {
+
         String token = "Bearer-" + this.authenticate(request).getToken();
         System.out.println("The token is: " + token);
         Cookie cookie = new Cookie("authenticate", token);
         cookie.setHttpOnly(true);
         cookie.setSecure(false); // set to true for HTTPS
         cookie.setPath("/");
-        cookie.setMaxAge(3 * 24 * 60 * 60);
+        cookie.setMaxAge(12 * 60 * 60); // 12 hours
 
         return cookie;
+    }
+
+    public void deleteCookie(String cookieName, HttpServletResponse response) {
+        Cookie cookie = new Cookie(cookieName, "");
+        cookie.setHttpOnly(true);
+        cookie.setSecure(false);
+        cookie.setPath("/");
+        cookie.setMaxAge(0);
+
+        response.addCookie(cookie); // Add the cookie to the response to delete it
     }
 }

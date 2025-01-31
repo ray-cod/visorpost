@@ -160,22 +160,6 @@ body {
     color: #000;
 }
 
-.form-content .custom-file-label {
-    border: 0;
-    background-color: #F7F7F7;
-    color: #000;
-}
-
-.form-content .custom-file-label:after {
-    color: #0093FF;
-}
-
-.form-content .custom-file:hover .custom-file-label, .form-content .custom-file:focus .custom-file-label {
-    border: 0;
-    background-color: #eaeaea;
-    color: #000;
-}
-
 .form-content .form-button .ibtn {
     background-color: #57D38C;
     color: #fff;
@@ -411,19 +395,6 @@ body {
 
 .bg-second {
     background-color: #F2F2F2;
-}
-
-.custom-borders {
-    border-top: 0;
-    border-bottom: 0;
-}
-
-.custom-borders:first-child {
-    border-top: 0;
-}
-
-.custom-borders:last-child {
-    border-bottom: 0;
 }
 
 .form-left .form-holder {
