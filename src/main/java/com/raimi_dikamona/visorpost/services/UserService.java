@@ -16,4 +16,8 @@ public class UserService {
     public Optional<User> getUserByEmail(String email){
         return repository.findByEmail(email);
     }
+
+    public Optional<User> getUserByFirstname(String firstname){
+        return repository.findByFirstName(firstname);
+    }
 }

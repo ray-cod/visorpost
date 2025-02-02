@@ -7,6 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Optional;
 
@@ -29,6 +30,21 @@ public class PagesController {
 
         if (user.isPresent()) {
             model.addAttribute("user", user.get());
+            model.addAttribute("fragmentName", "home");
+            return "index";
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+    @GetMapping("/{userName}")
+    public String userProfile(
+            @PathVariable String userName,
+            Model model){
+        Optional<User> user = userService.getUserByFirstname(userName.split("-")[0]);
+        if (user.isPresent()) {
+            model.addAttribute("user", user.get());
+            model.addAttribute("fragmentName", "profile");
             return "index";
         } else {
             return "redirect:/login";
