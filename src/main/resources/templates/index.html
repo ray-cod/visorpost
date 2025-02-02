@@ -3,9 +3,821 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--================= Favicon =================-->
+    <link rel="apple-touch-icon" th:href="@{/images/fav.png}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/images/fav.png}">
+    <!--================= Bootstrap V5 css =================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--================= Fontawesome  css =================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!--================= Rounded  css =================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/rounded.css}">
+    <!--================= Back Menus css =================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/back-menus.css}">
+    <!--================= Animate css =================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!--================= Owl Carousel css =================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!--================= Magnific Popup css =================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <!--================= Style css =================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <!--================= Spacing css =================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/back-spacing.css}">
+    <!--================= Responsive css =================-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
 </head>
-<body>
-<h1 th:text="'Welcome, ' + ${user.firstName}"></h1>
-</body>
+    <body>
+    <!--================= Back offcanvas Start Here =================-->
+    <div class="back-offcanvas"></div>
+    <div class="back-canvas">
+        <div class="close-btn">
+            <a id="nav-close" class="nav-close">
+                <div class="back-close">
+                    <span class="line1"></span>
+                    <span class="line2"></span>
+                </div>
+            </a>
+        </div>
+        <div class="offback-logo">
+            <a href="index.html" class="logo-text">VisorPost</a>
+        </div>
+        <div class="offcanvas-text">
+            <p>Education every new parents knows the feeling nothing more than for everyone to get at some sleep.But at least you’ve got Google. start building your first prototype today!</p>
+        </div>
+
+        <div class="back-title back-small-title">
+            <h2>Get in Touch</h2>
+        </div>
+        <div class="canvas-contact">
+            <div class="address-area">
+                <div class="address-list">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4 class="title">Address</h4>
+                        <em>06 Mymen KR. New York City</em>
+                    </div>
+                </div>
+                <div class="address-list">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4 class="title">Email</h4>
+                        <em><a href="mailto:backtheme@gmail.com">backtheme@gmail.com</a></em>
+                    </div>
+                </div>
+                <div class="address-list">
+                    <div class="info-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <div class="info-content">
+                        <h4 class="title">Phone</h4>
+                        <em>+02596 5874 59857</em>
+                    </div>
+                </div>
+            </div>
+            <ul class="social-links">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--================= Back offcanvas End Here=================-->
+
+    <!--================= Preloader Section Start Here =================-->
+    <div id="back__preloader">
+        <div id="back__circle_loader"></div>
+        <div class="back__loader_logo"><img src="/images/preload.png" alt="Preload"></div>
+    </div>
+    <!--================= Preloader Section End Here =================-->
+
+    <!--================= Header Section Start Here =================-->
+    <header id="back-header" class="back-header">
+        <div class="menu-part header-style2">
+            <div class="container">
+                <!--================= Back Menu Start Here =================-->
+                <div class="back-main-menu">
+                    <nav>
+                        <!--================= Menu Toggle btn =================-->
+                        <div class="menu-toggle">
+                            <div class="logo"><a href="index.html" class="logo-text">VisorPost</a></div>
+
+                            <div class="searchbar-part back-search-mobile">
+                                <ul>
+                                    <li class="back-dark-light"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun back-go-light1"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon back-go-dark1"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></li>
+                                    <li class="back_search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></li>
+                                    <li class="back-sign"><a href="login.html">Sign In</a></li>
+                                    <li id="nav-expanders" class="nav-expander bar">
+                                        <span class="back-hum1"></span>
+                                        <span class="back-hum2"></span>
+                                        <span class="back-hum3"></span>
+                                    </li>
+                                </ul>
+                                <form class="search-form">
+                                    <input type="text" class="form-input" placeholder="Search Here">
+                                    <button type="submit" class="form-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <button type="button" id="menu-btn">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!--================= Menu Structure =================-->
+                        <div class="back-inner-menus">
+                            <ul id="backmenu" class="back-menus back-sub-shadow">
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="profile.html">Profile</a>
+                                </li>
+                                <li>
+                                    <a href="blog.html">Blog</a>
+                                </li>
+                                <li> <a href="#">Categories</a>
+                                    <ul>
+                                        <li><a href="politics.html">Politics</a></li>
+                                        <li><a href="technology.html">Technology</a></li>
+                                        <li><a href="health.html">Health</a></li>
+                                        <li><a href="travel.html">Travel</a></li>
+                                        <li><a href="lifestyle.html">Lifestyle</a></li>
+                                        <li><a href="sports.html">Sports</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <div class="searchbar-part back-search-desktop">
+                                <ul>
+                                    <li class="back-dark-light"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun back-go-light"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon back-go-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></li>
+                                    <li class="back_search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></li>
+                                    <li class="back-sign"><a href="login.html">Sign In</a></li>
+                                    <li id="nav-expander" class="nav-expander bar">
+                                        <span class="back-hum1"></span>
+                                        <span class="back-hum2"></span>
+                                        <span class="back-hum3"></span>
+                                    </li>
+                                </ul>
+                                <form class="search-form">
+                                    <input type="text" class="form-input" placeholder="Search Here">
+                                    <button type="submit" class="form-button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <!--=================  Back Menu End Here  =================-->
+            </div>
+        </div>
+    </header>
+    <!--================= Header Section End Here =================-->
+
+    <!--================= Back Wrapper Start Here =================-->
+    <div class="back-wrapper">
+        <!--================= Back Whats Posts Start Here =================-->
+        <div class="back-hero-area back-latest-posts back-whats-posts back-hero-area2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <ul class="back-hero-bottom back-hero-bottom2">
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/2.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">News</a>
+                                    <h3><a href="#">Central bank customers need about currency</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/3.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Health</a>
+                                    <h3><a href="#">Pandemic impact mental health global view</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/4.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Drunk driving law by on country and arrest</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/5.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Travel</a>
+                                    <h3><a href="#">A step back in time and holidays for the ages</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/10.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Time can never stop for anyone for the ages</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="back-whats-btm">
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/1.jpg" alt="image"></a>
+                                    <a href="#" class="back-cate back-design">Art & Desing</a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <h3><a href="#">We have prepared 10 types of projects with more than 100 pages We have lots of courses and programs</a></h3>
+                                    <ul>
+                                        <li class="back-author"><span><img src="/images/author/1.jpg" alt="image"></span><a href="#">by Jon Deo</a></li>
+                                        <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>March 26, 2022</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <ul class="back-hero-bottom back-hero-bottom2 back-hero-rights">
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/6.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Sports</a>
+                                    <h3><a href="#">World ni beat kamaica to  first men's world cup</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/7.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">News</a>
+                                    <h3><a href="#">Thabna girls stage of protest demand</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/8.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Sports</a>
+                                    <h3><a href="#">World swimming changes rules in wake</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/9.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Food</a>
+                                    <h3><a href="#">A step back in time and holidays for</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/post/11.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Music</a>
+                                    <h3><a href="#">Everyone loves to listen to music step back for</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="back-home2-slider-area">
+            <div class="container">
+                <ul class="back-hero-bottom-two back-hero-slider3 owl-carousel">
+                    <li>
+                        <div class="image-areas">
+                            <a href="#"><img src="/images/post/12.jpg" alt="image"></a>
+                        </div>
+                        <div class="back-btm-content">
+                            <a href="#" class="back-cates">Health</a>
+                            <h3><a href="#">10 powerfull food </a></h3>
+                            <ul>
+                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>March 22, 2022</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-areas">
+                            <a href="#"><img src="/images/post/13.jpg" alt="image"></a>
+                        </div>
+                        <div class="back-btm-content">
+                            <a href="#" class="back-cates">Politics</a>
+                            <h3><a href="#">Mar against corruption</a></h3>
+                            <ul>
+                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>April 20, 2022</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-areas">
+                            <a href="#"><img src="/images/post/14.jpg" alt="image"></a>
+                        </div>
+                        <div class="back-btm-content">
+                            <a href="#" class="back-cates">Technology</a>
+                            <h3><a href="#">Art is creative minds</a></h3>
+                            <ul>
+                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>May 20, 2022</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="image-areas">
+                            <a href="#"><img src="/images/post/15.jpg" alt="image"></a>
+                        </div>
+                        <div class="back-btm-content">
+                            <a href="#" class="back-cates">Sports</a>
+                            <h3><a href="#">Beautiful lady hookup</a></h3>
+                            <ul>
+                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>March 22, 2022</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--================= Back Whats Posts End Here =================-->
+
+        <!--================= Back Live News Start Here =================-->
+        <div class="back-hero-area back-latest-posts back-whats-posts back-feature-posts back-feature-posts-latest back-live-news">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="back-title">
+                            <h2>Latest News</h2>
+                        </div>
+                        <div class="back-trending-stories back-trending-stories-home2">
+                            <div class="row">
+                                <ul class="row">
+                                    <li class="col-lg-6">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/latest-news/6.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">News</a>
+                                            <h3><a href="#">COVID patient successfully given vaccine fully treatment our board with a healthy</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#">Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>April 29, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/trending/2.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Travel</a>
+                                            <h3><a href="#">Selective focus photography of orange fox life insurence save a life no earth</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#"> Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>March 25, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="col-lg-4">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/latest-news/8.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Sports</a>
+                                            <h3><a href="#">tUNAI Android trending sneaker models give world cup sibe</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#"> Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>May 29, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-4">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/latest-news/7.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Politics</a>
+                                            <h3><a href="#">Treat your planet like you want to treat to our fimail workers.</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#"> Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>June 20, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-4">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/trending/5.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Technology</a>
+                                            <h3><a href="#">Virtual reality is here on leather by pink working world mentor</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#"> Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>June 20, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pl-30">
+                        <div class="back-title back-small-title pt-30">
+                            <h2>Most Read</h2>
+                        </div>
+                        <ul class="back-hero-bottom back-hero-bottom3">
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/1.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Save the earth, save a life no earth, no life health.</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/2.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Technology</a>
+                                    <h3><a href="#">That woman comes from heaven just for me working</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/1.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Save the earth, save a life no earth, no life health.</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/2.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Technology</a>
+                                    <h3><a href="#">That woman comes from heaven just for me working</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/11.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Brighten up your day with solar amd eco power man</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/12.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">News</a>
+                                    <h3><a href="#">Leveraging tech to drive a better IT experience others</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/5.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Lifestyle</a>
+                                    <h3><a href="#">Green leaves photo plant the with cute girl modeling</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================= Back Live News End Here =================-->
+
+        <!--================= Back Feature Posts Start Here =================-->
+        <div class="back-hero-area back-latest-posts back-whats-posts back-feature-posts back-feature-posts-latest back-live-news2">
+            <div class="container">
+                <div class="back-title">
+                    <h2>Popular Posts</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="back-trending-stories back-trending-stories-home2">
+                            <div class="row">
+                                <ul class="row">
+                                    <li class="col-lg-6">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/latest-news/17.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Social Media</a>
+                                            <h3><a href="#">Bernie nonummy incididunt duis pelopai iatis eum litora nunc aliquetor </a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#">Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>April 29, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <div class="image-areas">
+                                            <a href="#"><img src="/images/latest-news/18.jpg" alt="image"></a>
+                                        </div>
+                                        <div class="back-btm-content">
+                                            <a href="#" class="back-cates">Technology</a>
+                                            <h3><a href="#">Aernie nonummy incididunt duis dnapor iatis eum litora nunc anim lauda</a></h3>
+                                            <ul>
+                                                <li class="back-author">by <a href="#"> Jon Deo</a></li>
+                                                <li class="back-date"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>March 25, 2022</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="row">
+                                    <li class="col-lg-6">
+                                        <ul class="back-hero-bottom back-hero-bottom3">
+                                            <li>
+                                                <div class="image-areas">
+                                                    <a href="#"><img src="/images/read/1.jpg" alt="image"></a>
+                                                </div>
+                                                <div class="back-btm-content">
+                                                    <a href="#" class="back-cates">Politics</a>
+                                                    <h3><a href="#">Save the earth, save a life no earth, no life health.</a></h3>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="image-areas">
+                                                    <a href="#"><img src="/images/read/2.jpg" alt="image"></a>
+                                                </div>
+                                                <div class="back-btm-content">
+                                                    <a href="#" class="back-cates">Technology</a>
+                                                    <h3><a href="#">That woman comes from heaven just for me working</a></h3>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-lg-6">
+                                        <ul class="back-hero-bottom back-hero-bottom3">
+                                            <li>
+                                                <div class="image-areas">
+                                                    <a href="#"><img src="/images/read/1.jpg" alt="image"></a>
+                                                </div>
+                                                <div class="back-btm-content">
+                                                    <a href="#" class="back-cates">Politics</a>
+                                                    <h3><a href="#">Save the earth, save a life no earth, no life health.</a></h3>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="image-areas">
+                                                    <a href="#"><img src="/images/read/2.jpg" alt="image"></a>
+                                                </div>
+                                                <div class="back-btm-content">
+                                                    <a href="#" class="back-cates">Technology</a>
+                                                    <h3><a href="#">That woman comes from heaven just for me working</a></h3>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 pl-30">
+                        <ul class="back-hero-bottom back-hero-bottom3">
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/1.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Save the earth, save a life no earth, no life health.</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/2.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Technology</a>
+                                    <h3><a href="#">That woman comes from heaven just for me working</a></h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-areas">
+                                    <a href="#"><img src="/images/read/11.jpg" alt="image"></a>
+                                </div>
+                                <div class="back-btm-content">
+                                    <a href="#" class="back-cates">Politics</a>
+                                    <h3><a href="#">Brighten up your day with solar amd eco power man</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#" class="view-more"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg> View More</a>
+                        <div class="back-add text-center pt-10">
+                            <img src="/images/add4.jpg" alt="Back Add">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================= Back Feature Posts End Here =================-->
+
+        <div id="back-contact" class="back-contact-page pt-70 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--================= Form Section Start Here =================-->
+                        <div class="back-blog-form">
+                            <div class="back-title">
+                                <h2>Get in Touch</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-9">
+                                    <div id="blog-form" class="blog-form">
+                                        <div id="form-messages"></div>
+                                        <form id="contact-form">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="back-input">
+                                                        <input id="name" type="text" name="name" placeholder="Name">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdl-5">
+                                                    <div class="back-input">
+                                                        <input id="email" type="email" name="email" placeholder="Email">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <div class="back-input">
+                                                        <input id="subject" type="text" name="subject" placeholder="Subject">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 pdl-5">
+                                                    <div class="back-input">
+                                                        <input id="phone" type="text" name="phone" placeholder="Phone">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="back-textarea">
+                                                        <textarea id="message" name="message" placeholder="Message"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <button type="submit" class="back-btn">Send your Message</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--================= Form Section End Here =================-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--================= Footer Section Start Here =================-->
+    <footer id="back-footer" class="back-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 md-mb-30">
+                        <div class="footer-widget footer-widget-1">
+                            <div class="footer-logo white">
+                                <a href="index.html" class="logo-text">VisorPost</a>
+                            </div>
+                            <h5 class="footer-subtitle">We have lots of courses and programs from the main market experts.</h5>
+                            <h6 class="back-follow-us">Follow us</h6>
+                            <ul class="social-links">
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 md-mb-30">
+                        <div class="footer-widget footer-widget-2">
+                            <h3 class="footer-title">Category</h3>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="about.html">Technology</a></li>
+                                    <li><a href="coureses-grid.html">Fashion</a></li>
+                                    <li><a href="#">Life Style</a></li>
+                                    <li><a href="#">Travel</a></li>
+                                    <li><a href="profile.html">Design</a></li>
+                                    <li><a href="contact.html">Politics</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 md-mb-30">
+                        <div class="footer-widget footer-widget-2">
+                            <h3 class="footer-title">Quick links</h3>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="#">Browse Library</a></li>
+                                    <li><a href="#">TV News</a></li>
+                                    <li><a href="#">Music News</a></li>
+                                    <li><a href="blog.html">News & Blog</a></li>
+                                    <li><a href="#">Video</a></li>
+                                    <li><a href="#">Advertise</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="footer-widget footer-widget-3">
+                            <h3 class="footer-title">Newsletter</h3>
+                            <h5 class="footer-subtitle">Subscribe to our mailing list to <br>get the new updates!</h5>
+                            <form class="back-newsletter">
+                                <input type="email" placeholder="Enter Your Email">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <div class="back-copy-left">@ 2025 All Copyright Reserved. Developed by <a href="#">Raimi Dikamona</a></div>
+                <div class="back-copy-right">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--================= Footer Section End Here =================-->
+
+    <!--================= Scroll to Top Start =================-->
+    <div id="backscrollUp">
+        <span aria-hidden="true" class="fi-rr-arrow-small-up"></span>
+    </div>
+    <!--================= Scroll to Top End =================-->
+
+    <!--================= Jquery latest version =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!--================= Bootstrap js =================-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--================= Owl Carousel js =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!--================= Magnific Popup =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <!--================= Wow js =================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!--================= Back menus js =================-->
+    <script th:src="@{/javascript/back-menus.js}"></script>
+    <!--================= Plugins js =================-->
+    <script th:src="@{/javascript/plugins.js}"></script>
+    <!--================= Main js =================-->
+    <script th:src="@{/javascript/main-page.js}"></script>
+    </body>
 </html>
