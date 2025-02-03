@@ -228,6 +228,10 @@ ul {
   font-weight: 600;
   border-radius: 2px;
 }
+.log-in {
+  background-color: white !important;
+  color: #0088cb;
+}
 .back-header .searchbar-part ul li.back-sign a:hover {
   background: #030c26;
 }

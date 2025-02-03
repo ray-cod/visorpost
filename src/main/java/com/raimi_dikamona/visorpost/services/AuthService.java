@@ -65,7 +65,6 @@ public class AuthService {
     public Cookie generateCookie(AuthenticationRequest request) {
 
         String token = "Bearer-" + this.authenticate(request).getToken();
-        System.out.println("The token is: " + token);
         Cookie cookie = new Cookie("authenticate", token);
         cookie.setHttpOnly(true);
         cookie.setSecure(false); // set to true for HTTPS
