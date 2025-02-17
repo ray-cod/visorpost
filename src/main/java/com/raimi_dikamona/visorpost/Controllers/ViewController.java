@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
-public class PagesController {
+public class ViewController {
 
     private final UserService userService;
     private final PostService postService;

@@ -2,13 +2,13 @@ package com.raimi_dikamona.visorpost.Controllers.api;
 
 import com.raimi_dikamona.visorpost.Controllers.authUtils.*;
 import com.raimi_dikamona.visorpost.services.AuthService;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.io.IOException;
+
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -16,20 +16,21 @@ public class AuthController {
     private final AuthService service;
 
     @PostMapping("/register")
-    public String register(@ModelAttribute RegisterRequest request){
-        AuthenticationResponse response = service.register(request);
-        return "redirect:/login";
+    public void register(@ModelAttribute RegisterRequest request,
+                           HttpServletResponse response) throws IOException {
+        AuthenticationResponse regResponse = service.register(request);
+        response.sendRedirect("/login");
     }
 
     @PostMapping("/authenticate")
-    public String authenticate(@ModelAttribute AuthenticationRequest request,
-                                               HttpServletResponse response){
-        response.addCookie(service.generateCookie(request));
-        return "redirect:/";
+    public void authenticate(@ModelAttribute AuthenticationRequest request,
+                                               HttpServletResponse response) throws IOException {
+        AuthenticationResponse authResponse = service.Authentication(request, response);
+        response.sendRedirect("/");
     }
 
     @PostMapping("/forgot-password")
-    public String forgotPassword(){
-        return "redirect:/login";
+    public void forgotPassword(HttpServletResponse response) throws IOException {
+        response.sendRedirect("/login");
     }
 }

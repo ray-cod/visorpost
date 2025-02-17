@@ -62,16 +62,19 @@ public class AuthService {
                 .build();
     }
 
-    public Cookie generateCookie(AuthenticationRequest request) {
+    public AuthenticationResponse Authentication(AuthenticationRequest request,
+                                 HttpServletResponse response) {
 
-        String token = "Bearer-" + this.authenticate(request).getToken();
+        AuthenticationResponse authResponse = this.authenticate(request);
+        String token = "Bearer-" + authResponse.getToken();
         Cookie cookie = new Cookie("authenticate", token);
         cookie.setHttpOnly(true);
         cookie.setSecure(false); // set to true for HTTPS
         cookie.setPath("/");
         cookie.setMaxAge(12 * 60 * 60); // 12 hours
+        response.addCookie(cookie);
 
-        return cookie;
+        return authResponse;
     }
 
     public void deleteCookie(String cookieName, HttpServletResponse response) {
