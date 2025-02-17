@@ -6,17 +6,23 @@ import com.raimi_dikamona.visorpost.models.*;
 import com.raimi_dikamona.visorpost.models.enums.Role;
 import com.raimi_dikamona.visorpost.repositories.UserRepository;
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.NoSuchElementException;
 
+/**
+ * Service class responsible for handling authentication and user registration logic.
+ * <p>
+ * This service provides methods for:
+ * - Registering a new user.
+ * - Authenticating a user with email and password.
+ * - Generating and managing JWT tokens.
+ * - Setting and deleting authentication cookies.
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthService {
@@ -26,6 +32,13 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+    /**
+     * Registers a new user by encoding the password and saving user details in the database.
+     * Generates a JWT token upon successful registration.
+     *
+     * @param request The registration request containing user details.
+     * @return AuthenticationResponse containing the generated JWT token.
+     */
     public AuthenticationResponse register(RegisterRequest request){
         User user = User.builder()
                 .firstName(request.getFirstName())
@@ -45,6 +58,13 @@ public class AuthService {
                 .build();
     }
 
+    /**
+     * Authenticates a user by verifying credentials and generating a JWT token.
+     *
+     * @param request The authentication request containing user email and password.
+     * @return AuthenticationResponse containing the generated JWT token.
+     * @throws NoSuchElementException if the user does not exist.
+     */
     public AuthenticationResponse authenticate(AuthenticationRequest request){
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -62,6 +82,13 @@ public class AuthService {
                 .build();
     }
 
+    /**
+     * Authenticates a user and sets the JWT token in an HTTP-only cookie for security.
+     *
+     * @param request  The authentication request containing email and password.
+     * @param response The HTTP response where the authentication cookie will be set.
+     * @return AuthenticationResponse containing the generated JWT token.
+     */
     public AuthenticationResponse Authentication(AuthenticationRequest request,
                                  HttpServletResponse response) {
 
@@ -77,6 +104,12 @@ public class AuthService {
         return authResponse;
     }
 
+    /**
+     * Deletes an authentication cookie by setting its max age to zero.
+     *
+     * @param cookieName The name of the cookie to be deleted.
+     * @param response   The HTTP response where the deletion request will be applied.
+     */
     public void deleteCookie(String cookieName, HttpServletResponse response) {
         Cookie cookie = new Cookie(cookieName, "");
         cookie.setHttpOnly(true);
