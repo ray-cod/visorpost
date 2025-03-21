@@ -34,9 +34,6 @@ ul {
     font-size: 15px;
     font-weight: 600;
 }
-body.back-one-page .back-menus > li > a {
-    padding: 26px 16px 26px 16px;
-}
 
 .back-menus li.menu-active > a {
     color:#0d1e50;
@@ -216,8 +213,7 @@ body.back-one-page .back-menus > li > a {
         transform: translate(-50%, -50%);
     }
 
-    ul[data-menu-style="vertical"] , ul[data-menu-style="accordion"],
-    ul[data-menu-style="vertical"] li ul.sub-menu {
+     ul[data-menu-style="accordion"] {
         width: 100% !important;
     } 
     .back-menus {
