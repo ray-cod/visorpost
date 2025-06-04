@@ -4,6 +4,7 @@ import com.raimi_dikamona.visorpost.Controllers.authUtils.*;
 import com.raimi_dikamona.visorpost.services.AuthService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -16,21 +17,14 @@ public class AuthController {
     private final AuthService service;
 
     @PostMapping("/register")
-    public void register(@ModelAttribute RegisterRequest request,
-                           HttpServletResponse response) throws IOException {
-        AuthenticationResponse regResponse = service.register(request);
-        response.sendRedirect("/login");
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody RegisterRequest request) {
+        return ResponseEntity.ok(service.register(request));
     }
 
     @PostMapping("/authenticate")
-    public void authenticate(@ModelAttribute AuthenticationRequest request,
-                                               HttpServletResponse response) throws IOException {
-        AuthenticationResponse authResponse = service.Authentication(request, response);
-        response.sendRedirect("/");
-    }
-
-    @PostMapping("/forgot-password")
-    public void forgotPassword(HttpServletResponse response) throws IOException {
-        response.sendRedirect("/login");
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request) {
+        return ResponseEntity.ok(service.authenticate(request));
     }
 }

@@ -81,42 +81,4 @@ public class AuthService {
                 .token(jwtToken)
                 .build();
     }
-
-    /**
-     * Authenticates a user and sets the JWT token in an HTTP-only cookie for security.
-     *
-     * @param request  The authentication request containing email and password.
-     * @param response The HTTP response where the authentication cookie will be set.
-     * @return AuthenticationResponse containing the generated JWT token.
-     */
-    public AuthenticationResponse Authentication(AuthenticationRequest request,
-                                 HttpServletResponse response) {
-
-        AuthenticationResponse authResponse = this.authenticate(request);
-        String token = "Bearer-" + authResponse.getToken();
-        Cookie cookie = new Cookie("authenticate", token);
-        cookie.setHttpOnly(true);
-        cookie.setSecure(false); // set to true for HTTPS
-        cookie.setPath("/");
-        cookie.setMaxAge(12 * 60 * 60); // 12 hours
-        response.addCookie(cookie);
-
-        return authResponse;
-    }
-
-    /**
-     * Deletes an authentication cookie by setting its max age to zero.
-     *
-     * @param cookieName The name of the cookie to be deleted.
-     * @param response   The HTTP response where the deletion request will be applied.
-     */
-    public void deleteCookie(String cookieName, HttpServletResponse response) {
-        Cookie cookie = new Cookie(cookieName, "");
-        cookie.setHttpOnly(true);
-        cookie.setSecure(false);
-        cookie.setPath("/");
-        cookie.setMaxAge(0);
-
-        response.addCookie(cookie); // Add the cookie to the response to delete it
-    }
 }
