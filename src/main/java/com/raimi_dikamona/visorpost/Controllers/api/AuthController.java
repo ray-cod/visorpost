@@ -2,12 +2,9 @@ package com.raimi_dikamona.visorpost.Controllers.api;
 
 import com.raimi_dikamona.visorpost.Controllers.authUtils.*;
 import com.raimi_dikamona.visorpost.services.AuthService;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
